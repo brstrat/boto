@@ -115,8 +115,12 @@ class SESConnection(AWSAuthConnection):
         errors share the same HTTP response code, meaning we have to get really
         kludgey and do string searches to figure out what went wrong.
         """
-        boto.log.error('%s %s' % (response.status, response.reason))
-        boto.log.error('%s' % body)
+        # DJANGO_SIMPLE
+        #boto.log.error('%s %s' % (response.status, response.reason))
+        #boto.log.error('%s' % body)
+
+        boto.log.warn('%s %s' % (response.status, response.reason))
+        boto.log.warn('%s' % body)
 
         if "Address blacklisted." in body:
             # Delivery failures happened frequently enough with the recipient's

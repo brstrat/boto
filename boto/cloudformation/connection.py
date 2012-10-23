@@ -20,9 +20,9 @@
 # IN THE SOFTWARE.
 
 try:
-    import simplejson as json
-except:
     import json
+except:
+    import simplejson as json
 
 import boto
 from boto.cloudformation.stack import Stack, StackSummary, StackEvent

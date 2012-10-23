@@ -24,9 +24,9 @@ from boto.regioninfo import RegionInfo
 import boto
 import uuid
 try:
-    import simplejson as json
-except ImportError:
     import json
+except ImportError:
+    import simplejson as json
 
 class SNSConnection(AWSQueryConnection):
 
